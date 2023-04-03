@@ -1,0 +1,216 @@
+/* my variables */
+:root{
+    --main-clr:hsl(300, 43%, 22%);
+    --alt-main-clr: hsl(333, 80%, 67%);
+
+    --secon--clr: hsl(303, 10%, 53%);
+    --alt-secon-clr:hsl(300, 24%, 96%);
+}
+/* css reset */
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+/*
+2. Remove default margin
+*/
+* {
+    margin: 0;
+    padding: 0;
+}
+/*
+3. Allow percentage-based heights in the application
+*/
+html, body {
+    height: 100%;
+}
+/*
+Typographic tweaks!
+4. Add accessible line-height
+5. Improve text rendering
+*/
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    font-family: 'League Spartan', sans-serif;
+}
+/*
+6. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+/*
+7. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+    font: inherit;
+}
+/*
+8. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+/* reset the list style type */
+ul{
+    list-style-type: none;
+}
+/* my utilities */
+.container{
+    padding:30px 10px;
+    margin: 0 auto;
+
+}
+@media (min-width:992) {
+    .container{
+        width: 970px;
+    }
+    
+}
+@media (min-width:1200px) {
+    .container{
+        width: 1170px;
+    }
+    
+}
+/* my custom css */
+main{
+    background-image: url('images/bg-pattern-bottom-desktop.svg'),url('images//bg-pattern-top-desktop.svg');
+    background-size: cover;
+}
+@media (max-width:767px) {
+    main{
+        background-image: url('images/bg-pattern-bottom-mobile.svg'),url('images/bg-pattern-top-mobile.svg');
+
+    }
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    min-height: 800px;
+}
+.box:first-of-type{
+    padding-top: 2rem ;
+    display: flex;
+    justify-content: space-between;
+}
+.heading{
+    flex-basis: 40%;
+
+}
+.heading h1{
+    text-transform: capitalize;
+    color: var(--main-clr);
+    font-size: 2rem;
+    line-height: 1.2;
+    font-weight: 700;
+}
+.heading p{
+    color: var(--secon--clr);
+    margin-top: 20px;
+}
+.reviews{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    flex-basis: 50%;
+}
+.reviews li{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    color: var(--secon--clr);
+    align-items: center;
+    padding: 1.5rem 0.825rem;
+    background-color: var(--alt-secon-clr);
+    border-radius: 0.7rem;
+}
+.stars{
+    display: flex;
+    gap: 10px;
+}
+li:first-of-type{
+    transform: translateX(-4rem);
+
+}
+li:nth-of-type(2){
+    transform: translateX(-2rem);
+    
+}
+.box:nth-of-type(2){
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    gap: 30px;
+}
+.testimonial{
+    background-color: var(--main-clr);
+    color: var(--alt-secon-clr);
+    padding: 1rem 1.225rem;
+    border-radius: 1.25rem;
+}
+.head{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.head img{
+    border-radius: 50%;
+    border: 5px solid var(--alt-secon-clr);
+}
+h5{
+    font-size: 1.2rem; ;
+}
+.head h5 span{
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--alt-main-clr);
+}
+.testimonial p{
+    padding-top: 1rem;
+}
+.testimonial:first-of-type{
+    transform: translateY(-3rem);
+}
+.testimonial:nth-of-type(2){
+    transform: translateY(-1.5rem);
+}
+
+@media (max-width: 767px) {
+    .box:first-of-type {
+        flex-direction: column;
+        justify-content: flex-start;
+        text-align: center;
+    }
+    .box:first-of-type > * {
+        flex: 1;
+    }
+    .reviews li{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .reviews li:first-of-type{
+        transform: translateX(0px);
+    
+    }
+    .reviews li:nth-of-type(2){
+        transform: translateX(0px);
+        
+    }
+    .reviews{
+        margin-block: 20px;
+    }
+    .box .testimonial:first-of-type{
+        transform: translateY(0px);
+    }
+    .box .testimonial:nth-of-type(2){
+        transform: translateY(0px);
+    }
+
+    
+}
